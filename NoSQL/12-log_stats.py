@@ -5,7 +5,12 @@ import pymongo
 
 
 def print_stats(collection):
-    # Get the total number of logs in the collection
+    """
+    Calculate and print statistics about Nginx logs.
+
+    Args:
+        collection (pymongo.collection.Collection): The MongoDB collection containing Nginx logs.
+    """
     total_logs = collection.count_documents({})
 
     # Initialize counters for each HTTP method
