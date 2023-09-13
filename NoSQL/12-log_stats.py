@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+"""Script that provides some stats about Ngix
+logs stored in MongoDB"""
 import pymongo
 
 
