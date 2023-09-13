@@ -35,7 +35,8 @@ def print_stats(collection):
 
 
 if __name__ == "__main__":
-    # Connect to the MongoDB server and select the "logs" database and "nginx" collection
+    # Connect to the MongoDB server and select the "logs" database
+    # and "nginx" collection
     client = pymongo.MongoClient("mongodb://localhost:27017/")
     db = client["logs"]
     collection = db["nginx"]
