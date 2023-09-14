@@ -9,7 +9,8 @@ def print_stats(collection):
     Calculate and print statistics about Nginx logs.
 
     Args:
-        collection (pymongo.collection.Collection): The MongoDB collection containing Nginx logs.
+        collection (pymongo.collection.Collection): The MongoDB collection 
+        containing Nginx logs.
     """
     total_logs = collection.count_documents({})
 
