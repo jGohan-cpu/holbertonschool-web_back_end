@@ -1,6 +1,19 @@
-import getListStudents from "./0-get_list_students.js";
-import updateStudentGradeByCity from "./4-update_grade_by_city.js";
+/* enlist-disable */
+export default function updateStudentGradeByCity(students, city, newGrades) {
+  if (!Array.isArray(students)) {
+    return [];
+  }
 
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }, { studentId: 1, grade: 86 }]));
-
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }]));
+  const filter = students.filter((filteredObj) => filteredObj.location === city);
+  const map = filter.map((mappedObj) => {
+    const grade = newGrades.filter((newGradesObj) => newGradesObj.studentId === mappedObj.id);
+    const newObj = { ...mappedObj };
+    if (grade[0]) {
+      newObj.grade = grade[0].grade;
+    } else {
+      newObj.grade = 'N/A';
+    }
+    return newObj;
+  });
+  return map;
+}
